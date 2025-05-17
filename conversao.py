@@ -31,7 +31,7 @@ print("Exemplos de conversão de float para binário:\n")
 
 print("Números com representação exata\n")
 # Números com representação exata   
-nums = [1.0, -1.0, 2.0, 0.5]
+nums = [0.1, 0.2, 0.3]
 for num in nums:
     parts = float_to_binary(num)
     print(f"{num}: {parts['parts']}")
@@ -43,26 +43,26 @@ for num in nums:
 # 0.5: S:0 E:01111111110 M:0000000000000000000000000000000000000000000000000000
 
 print("\nNúmeros com representação inexata\n")
-# Números com representação inexata
-nums = [0.1, 1e-10]
-for num in nums:
-    parts = float_to_binary(num)
-    print(f"{num}: {parts['parts']}")
+# # Números com representação inexata
+# nums = [0.1, 1e-10]
+# for num in nums:
+#     parts = float_to_binary(num)
+#     print(f"{num}: {parts['parts']}")
     
-# Saída:
-# 0.1: S:0 E:01111111011 M:1001100110011001100110011001100110011001100110011010
-# 1e-10: S:0 E:01111001101 M:1011111000100101110000110011110111110001100111001100
+# # Saída:
+# # 0.1: S:0 E:01111111011 M:1001100110011001100110011001100110011001100110011010
+# # 1e-10: S:0 E:01111001101 M:1011111000100101110000110011110111110001100111001100
 
 
-import numpy as np
+# import numpy as np
 
-print("\nNúmeros especiais\n")
-special_nums = [np.inf, -np.inf, np.nan]
-for num in special_nums:
-    parts = float_to_binary(num)
-    print(f"{num}: {parts['parts']}")
+# print("\nNúmeros especiais\n")
+# special_nums = [np.inf, -np.inf, np.nan]
+# for num in special_nums:
+#     parts = float_to_binary(num)
+#     print(f"{num}: {parts['parts']}")
     
-# Saída:
-# inf: S:0 E:11111111111 M:0000000000000000000000000000000000000000000000000000
-# -inf: S:1 E:11111111111 M:0000000000000000000000000000000000000000000000000000
-# nan: S:0 E:11111111111 M:1000000000000000000000000000000000000000000000000000
+# # Saída:
+# # inf: S:0 E:11111111111 M:0000000000000000000000000000000000000000000000000000
+# # -inf: S:1 E:11111111111 M:0000000000000000000000000000000000000000000000000000
+# # nan: S:0 E:11111111111 M:1000000000000000000000000000000000000000000000000000
