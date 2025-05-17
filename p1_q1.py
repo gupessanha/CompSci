@@ -203,4 +203,34 @@ O número máximo de iterações fixo em 5 limita a convergência completa em al
 Mesmo com valores grandes de entrada, o método mostra robustez.
 A curvatura da função influencia muito: quanto mais suave a derivada, melhor o desempenho.
 O teste de abs(x_k - x_k_1) < tol como critério para "método oscilando sem convergir" é redundante com o erro relativo e pode ser removido ou ajustado para evitar falso positivo.
-"""
+
+1. Função e derivada:
+   - f(x) = x³ - 3x² + 5x - 3
+   - f'(x) = 3x² - 6x + 5
+   - Tolerância: 1e-6
+   - Máximo de iterações: 5
+
+2. Caso x₀ = 0:
+   - f(0) = -3, f'(0) = 5
+   - A solução se aproxima de x ≈ 1.0
+   - Erro vai diminuindo a cada iteração
+   - Convergência clara, mas limitada pelo número de iterações
+
+3. Caso x₀ = 1:
+   - f(1) = 0, f'(1) = 2
+   - A raiz já é encontrada na primeira iteração
+   - Convergência imediata
+   - Método finaliza rapidamente e com sucesso
+
+4. Caso x₀ = 2:
+   - f(2) = 3, f'(2) = 5
+   - Método converge em direção a x ≈ 1.0
+   - Evolução semelhante ao caso x₀ = 0
+   - Boa aproximação, mas a tolerância não é atingida em 5 iterações
+
+5. Caso x₀ = 3:
+   - f(3) = 12, f'(3) = 14
+   - Método apresenta oscilações, mas caminha para a raiz
+   - Último valor fica próximo de x ≈ 1.0008
+   - Erro relativo ainda significativo na última iteração
+   """
